@@ -1,12 +1,14 @@
 package hello;
 
+import java.util.Comparator;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Person {
+public class Person implements Comparator<Person> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -38,5 +40,11 @@ public class Person {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	@Override
+	public int compare(Person arg0, Person arg1) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
